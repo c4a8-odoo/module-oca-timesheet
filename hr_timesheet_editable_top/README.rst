@@ -61,6 +61,8 @@ Contributors
 
   - Victor Champonnois
 
+- Manuel Fombuena <mfombuena@innovara.tech>
+
 Maintainers
 -----------
 
