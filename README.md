@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [crm_timesheet](crm_timesheet/) | 17.0.1.0.1 |  | CRM Timesheet
-[hr_timesheet_begin_end](hr_timesheet_begin_end/) | 17.0.1.0.0 |  | Timesheet - Begin/End Hours
+[hr_timesheet_begin_end](hr_timesheet_begin_end/) | 17.0.1.0.1 |  | Timesheet - Begin/End Hours
 [hr_timesheet_calendar](hr_timesheet_calendar/) | 17.0.1.0.0 | [![lbarry-apsl](https://github.com/lbarry-apsl.png?size=30px)](https://github.com/lbarry-apsl) | HR Timesheet Calendar
 [hr_timesheet_editable_top](hr_timesheet_editable_top/) | 17.0.1.0.0 |  | Add new timesheet entries to the top of the list
 [hr_timesheet_sheet](hr_timesheet_sheet/) | 17.0.1.0.0 |  | Timesheet Sheets, Activities
