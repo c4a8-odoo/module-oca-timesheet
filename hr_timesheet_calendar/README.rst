@@ -61,13 +61,13 @@ Authors
 Contributors
 ------------
 
-[APSL-Nagarro](https://apsl.tech):
+[APSL-Nagarro](`https://apsl.tech <https://apsl.tech>`__):
 
-- Lansana Barry Sow <lbarry@apsl.net>
+-  Lansana Barry Sow <lbarry@apsl.net>
 
-[glueckkanja AG](https://glueckkanja.com):
+[glueckkanja AG](`https://glueckkanja.com <https://glueckkanja.com>`__):
 
-- Christopher Rogos <crogos@gmail.com>
+-  Christopher Rogos <crogos@gmail.com>
 
 Maintainers
 -----------
