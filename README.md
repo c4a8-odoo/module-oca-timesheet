@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [hr_timesheet_task_stage](hr_timesheet_task_stage/) | 19.0.1.0.0 |  | Open/Close task from corresponding Task Log entry
+[hr_timesheet_time_control](hr_timesheet_time_control/) | 19.0.1.0.0 | <a href='https://github.com/victoralmau'><img src='https://github.com/victoralmau.png' width='32' height='32' style='border-radius:50%;' alt='victoralmau'/></a> | Project timesheet time control
 
 [//]: # (end addons)
 
