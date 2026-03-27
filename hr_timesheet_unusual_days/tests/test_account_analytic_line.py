@@ -7,11 +7,11 @@ from odoo.addons.base.tests.common import BaseCommon
 
 
 class TestAccountAnalyticLine(BaseCommon):
-    @patch("odoo.addons.hr_holidays.models.hr_leave.HolidaysRequest.get_unusual_days")
+    @patch("odoo.addons.hr_holidays.models.hr_leave.HrLeave.get_unusual_days")
     def test_get_unusual_days_with_date_range(self, patch_get_unusual_days):
         # arrange
-        date_from = datetime(2024, 12, 23)
-        date_to = datetime(2024, 12, 29)
+        date_from = datetime(2024, 12, 23).strftime("%Y-%m-%d %H:%M:%S")
+        date_to = datetime(2024, 12, 29).strftime("%Y-%m-%d %H:%M:%S")
         return_value = {
             "2024-12-23": False,
             "2024-12-24": False,
@@ -32,8 +32,8 @@ class TestAccountAnalyticLine(BaseCommon):
         self.assertEqual(unusual_days, return_value)
 
     def test_get_unusual_days_empty_result(self):
-        date_from = datetime(2024, 12, 16)
-        date_to = datetime(2024, 12, 18)
+        date_from = datetime(2024, 12, 16).strftime("%Y-%m-%d %H:%M:%S")
+        date_to = datetime(2024, 12, 18).strftime("%Y-%m-%d %H:%M:%S")
 
         unusual_days = self.env["account.analytic.line"].get_unusual_days(
             date_from, date_to
