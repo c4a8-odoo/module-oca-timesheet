@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ===================================
 HR Timesheet Time Control begin/end
 ===================================
@@ -17,7 +13,7 @@ HR Timesheet Time Control begin/end
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Ftimesheet-lightgray.png?logo=github
@@ -40,6 +36,43 @@ This module adds begin and end time to analytic line, similar to
 
 .. contents::
    :local:
+
+Usage
+=====
+
+After installing this module, two new fields become available on every
+timesheet entry: **Begin Time** and **End Time**. These fields display
+the start and end times of a work session in the employee's local
+timezone and keep the underlying ``date_time`` / ``date_time_end``
+datetime fields synchronized automatically.
+
+Timesheet List View
+-------------------
+
+The **Begin Time** and **End Time** columns are shown by default and can
+be toggled like any other optional column.
+
+.. image:: https://raw.githubusercontent.com/OCA/timesheet/18.0/hr_timesheet_time_control_begin_end/static/img/01_timesheet_list_view.png
+   :alt: Timesheet list view with Begin Time and End Time columns
+
+Timesheet Form View
+-------------------
+
+**Duration** field. Entering a **Begin Time** and **End Time**
+automatically recalculates the duration.
+
+.. image:: https://raw.githubusercontent.com/OCA/timesheet/18.0/hr_timesheet_time_control_begin_end/static/img/02_timesheet_form_view.png
+   :alt: Timesheet form view with Begin Time and End Time fields
+
+Project Task – Inline Timesheet View
+------------------------------------
+
+Inside a project task the inline timesheet list also exposes the **Begin
+Time** and **End Time** columns, making it easy to review the exact work
+intervals logged against a task without leaving the task form.
+
+.. image:: https://raw.githubusercontent.com/OCA/timesheet/18.0/hr_timesheet_time_control_begin_end/static/img/03_task_timesheet_view.png
+   :alt: Task inline timesheet view with Begin and End Time
 
 Bug Tracker
 ===========
