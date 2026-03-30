@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 =====================
 HR Timesheet Calendar
 =====================
@@ -17,7 +13,7 @@ HR Timesheet Calendar
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Ftimesheet-lightgray.png?logo=github
@@ -32,29 +28,33 @@ HR Timesheet Calendar
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module enhances the timesheet experience by adding a **calendar view** to
-timesheet entries, allowing employees to visualize and manage their work hours
-in a familiar calendar interface.
+This module enhances the timesheet experience by adding a **calendar
+view** to timesheet entries, allowing employees to visualize and manage
+their work hours in a familiar calendar interface.
 
 Key features:
 
-- **Calendar view**: A new calendar view is added to the Timesheets menu,
-  displaying entries by their start and end times and color-coded by project.
-- **Smart default start time**: When creating a new timesheet entry, the start
-  time is automatically determined based on a configurable alignment policy:
+-  **Calendar view**: A new calendar view is added to the Timesheets
+   menu, displaying entries by their start and end times and color-coded
+   by project.
+-  **Smart default start time**: When creating a new timesheet entry,
+   the start time is automatically determined based on a configurable
+   alignment policy:
 
-  - *Set Start Date to Now*: Default start time is the current time.
-  - *Align to previous entry*: Start time is set to the end time of the
-    previous entry on the same day. For the first entry of the day, the
-    start time is taken from the employee's work schedule (resource calendar).
+   -  *Set Start Date to Now*: Default start time is the current time.
+   -  *Align to previous entry*: Start time is set to the end time of
+      the previous entry on the same day. For the first entry of the
+      day, the start time is taken from the employee's work schedule
+      (resource calendar).
 
-- **Automatic duration calculation**: The duration (unit amount) is
-  automatically computed from the start and end times whenever both are set.
-- **Duplicate to today**: Timesheet entries can be duplicated to the current
-  day while preserving the original start and end times.
+-  **Automatic duration calculation**: The duration (unit amount) is
+   automatically computed from the start and end times whenever both are
+   set.
+-  **Duplicate to today**: Timesheet entries can be duplicated to the
+   current day while preserving the original start and end times.
 
-This module depends on the ``project_timesheet_time_control`` module from the
-OCA/project repository to use the ``date_time_end`` field.
+This module depends on the ``project_timesheet_time_control`` module
+from the OCA/project repository to use the ``date_time_end`` field.
 
 **Table of contents**
 
@@ -64,19 +64,20 @@ OCA/project repository to use the ``date_time_end`` field.
 Configuration
 =============
 
-To configure the default start time behavior for new timesheet entries, go to
-**Configuration → Settings** and find the **Time Connecting** option under
-**Timesheet Options**.
+To configure the default start time behavior for new timesheet entries,
+go to **Configuration → Settings** and find the **Time Connecting**
+option under **Timesheet Options**.
 
 Two options are available:
 
-- **Set Start Date to Now**: New entries default their start time to the
-  current date and time.
-- **Align to previous entry**: New entries default their start time to the
-  end time of the most recent entry on the same day. If no previous entry
-  exists for the day, the start time is taken from the employee's work
-  schedule (resource calendar). If no work schedule is defined or no working
-  hours exist for that day, the current time is used as the fallback.
+-  **Set Start Date to Now**: New entries default their start time to
+   the current date and time.
+-  **Align to previous entry**: New entries default their start time to
+   the end time of the most recent entry on the same day. If no previous
+   entry exists for the day, the start time is taken from the employee's
+   work schedule (resource calendar). If no work schedule is defined or
+   no working hours exist for that day, the current time is used as the
+   fallback.
 
 Usage
 =====
@@ -84,35 +85,36 @@ Usage
 Calendar View
 -------------
 
-To view timesheets in the calendar view, navigate to
-**Timesheets → All Timesheets** and click the **Calendar** view icon.
+To view timesheets in the calendar view, navigate to **Timesheets → All
+Timesheets** and click the **Calendar** view icon.
 
-Entries are displayed as events spanning from the start time (``date_time``)
-to the end time (``date_time_end``) and are color-coded by project for easy
-identification.
+Entries are displayed as events spanning from the start time
+(``date_time``) to the end time (``date_time_end``) and are color-coded
+by project for easy identification.
 
 Creating Timesheet Entries in the Calendar
 ------------------------------------------
 
 You can create new timesheet entries directly from the calendar view by
-clicking on a time slot. A quick-create form will open, pre-filled with the
-selected date and time. The start time defaults based on your configured
-**Time Connecting** setting (see Configuration).
+clicking on a time slot. A quick-create form will open, pre-filled with
+the selected date and time. The start time defaults based on your
+configured **Time Connecting** setting (see Configuration).
 
 Automatic Duration Calculation
--------------------------------
+------------------------------
 
-When both **Start Time** (``date_time``) and the end time (``date_time_end``)
-are set, the **Duration** field is automatically computed as the difference
-between the two times. This means you can simply set the start and end times
-and the duration (in hours) will be filled in for you.
+When both **Start Time** (``date_time``) and the end time
+(``date_time_end``) are set, the **Duration** field is automatically
+computed as the difference between the two times. This means you can
+simply set the start and end times and the duration (in hours) will be
+filled in for you.
 
 Duplicate to Today
 ------------------
 
-To copy an existing timesheet entry to today's date while keeping the same
-start and end times, use the **Duplicate to Today** action available on
-timesheet form views.
+To copy an existing timesheet entry to today's date while keeping the
+same start and end times, use the **Duplicate to Today** action
+available on timesheet form views.
 
 Bug Tracker
 ===========
@@ -136,13 +138,13 @@ Authors
 Contributors
 ------------
 
-`APSL-Nagarro <https://apsl.tech>`_:
+[APSL-Nagarro](https://apsl.tech):
 
-- Lansana Barry Sow <lbarry@apsl.net>
+-  Lansana Barry Sow <lbarry@apsl.net>
 
-`glueckkanja AG <https://glueckkanja.com>`_:
+[glueckkanja AG](https://glueckkanja.com):
 
-- Christopher Rogos <crogos@gmail.com>
+-  Christopher Rogos <crogos@gmail.com>
 
 Maintainers
 -----------
