@@ -2,6 +2,8 @@ To configure the default start time behavior for new timesheet entries, go to
 **Configuration → Settings** and find the **Time Connecting** option under
 **Timesheet Options**.
 
+![Timesheet Settings – Time Connecting option](../static/img/timesheet_settings.png)
+
 Two options are available:
 
 - **Set Start Date to Now**: New entries default their start time to the

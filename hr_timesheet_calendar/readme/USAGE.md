@@ -7,6 +7,8 @@ Entries are displayed as events spanning from the start time (`date_time`) to
 the end time (`date_time_end`) and are color-coded by project for easy
 identification.
 
+![Timesheet Calendar View](../static/img/timesheet_calendar_view.png)
+
 ## Creating Timesheet Entries in the Calendar
 
 You can create new timesheet entries directly from the calendar view by

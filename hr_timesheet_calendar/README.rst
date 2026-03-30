@@ -68,6 +68,9 @@ To configure the default start time behavior for new timesheet entries,
 go to **Configuration → Settings** and find the **Time Connecting**
 option under **Timesheet Options**.
 
+.. image:: https://raw.githubusercontent.com/OCA/timesheet/18.0/hr_timesheet_calendar/static/img/timesheet_settings.png
+   :alt: Timesheet Settings – Time Connecting option
+
 Two options are available:
 
 -  **Set Start Date to Now**: New entries default their start time to
@@ -91,6 +94,9 @@ Timesheets** and click the **Calendar** view icon.
 Entries are displayed as events spanning from the start time
 (``date_time``) to the end time (``date_time_end``) and are color-coded
 by project for easy identification.
+
+.. image:: https://raw.githubusercontent.com/OCA/timesheet/18.0/hr_timesheet_calendar/static/img/timesheet_calendar_view.png
+   :alt: Timesheet Calendar View
 
 Creating Timesheet Entries in the Calendar
 ------------------------------------------
