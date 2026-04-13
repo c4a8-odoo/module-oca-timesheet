@@ -143,7 +143,8 @@ class AccountAnalyticLine(models.Model):
     @api.model
     def duplicate_today(self, record_id):
         record = self.browse(record_id)
-        date_today = fields.Datetime.now(self.env.user.partner_id.tz).date()
+        user_tz = pytz.timezone(self.env.user.tz or "UTC")
+        date_today = datetime.now(user_tz).date()
         date_time_today = datetime.combine(date_today, record.date_time.time())
         date_time_end_today = datetime.combine(
             date_today,
