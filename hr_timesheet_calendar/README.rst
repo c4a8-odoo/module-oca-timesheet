@@ -24,7 +24,7 @@ HR Timesheet Calendar
     :target: https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_calendar
     :alt: OCA/timesheet
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/timesheet-18-0/timesheet-18-0-hr_timesheet_calendar
+    :target: https://translation.odoo-community.org/projects/timesheet-19-0/timesheet-19-0-hr_timesheet_calendar
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
     :target: https://runboat.odoo-community.org/builds?repo=OCA/timesheet&target_branch=19.0
@@ -35,8 +35,8 @@ HR Timesheet Calendar
 This module allows you to have the calendar view to show or perform time
 imputation.
 
-This module depends on the project_timesheet_time_control module from
-the OCA/project repo to use the 'date_time_end' field.
+This module depends on the `hr_timesheet_time_control` module from this
+repository to use the `date_time` and `date_time_end` fields.
 
 **Table of contents**
 
