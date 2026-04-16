@@ -14,7 +14,7 @@ class AccountAnalyticLine(models.Model):
         # or after the previous entry.
         params = self.env["ir.config_parameter"].sudo()
         timesheet_alignment = params.get_param(
-            "project_timesheet_time_control.timesheet_alignment"
+            "hr_timesheet_time_control.timesheet_alignment"
         )
         # default to now
         start_time = fields.Datetime.now()
@@ -28,7 +28,7 @@ class AccountAnalyticLine(models.Model):
         )
         employee_id = defaults.get(
             "employee_id",
-            self._context.get("default_employee_id", self.env.user.employee_id.id),
+            self.env.context.get("default_employee_id", self.env.user.employee_id.id),
         )
         if not employee_id:
             return start_time
@@ -83,7 +83,9 @@ class AccountAnalyticLine(models.Model):
         return super().create(list(map(self._eval_date, vals_list)))
 
     date_time = fields.Datetime(
-        string="Start Time", default=_get_default_start_time, copy=False
+        string="Start Time",
+        default=lambda self: self._get_default_start_time(),
+        copy=False,
     )
 
     def _add_missing_default_values(self, vals):
@@ -115,7 +117,7 @@ class AccountAnalyticLine(models.Model):
     def default_get(self, fields_list):
         vals = super().default_get(fields_list)
         if (
-            self._context.get("is_timesheet", False)
+            self.env.context.get("is_timesheet", False)
             and "product_uom_id" in fields_list
             and "product_uom_id" not in vals
         ):
@@ -125,7 +127,7 @@ class AccountAnalyticLine(models.Model):
                 company = self.env["res.company"].browse(company_id)
             if not company:
                 employee_in_id = vals.get(
-                    "employee_id", self._context.get("default_employee_id", False)
+                    "employee_id", self.env.context.get("default_employee_id", False)
                 )
                 if employee_in_id:
                     company = self.env["hr.employee"].browse(employee_in_id).company_id

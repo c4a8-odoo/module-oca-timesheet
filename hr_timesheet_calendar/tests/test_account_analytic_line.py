@@ -14,14 +14,138 @@ class TestAccountAnalyticLine(BaseCommon):
         super().setUpClass()
         cls.analytic_line_model = cls.env["account.analytic.line"]
         cls.test_user = cls.env.ref("base.user_admin")
-        cls.employee = cls.env.ref("hr.employee_hne")
-        cls.project = cls.env.ref("project.project_project_2")
-        cls.task = cls.env.ref("project.project_2_task_6")
+        calendar = cls.env["resource.calendar"].create(
+            {
+                "name": "Test Calendar (6-15)",
+                "attendance_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Mon AM",
+                            "dayofweek": "0",
+                            "hour_from": 6.0,
+                            "hour_to": 12.0,
+                            "day_period": "morning",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Mon PM",
+                            "dayofweek": "0",
+                            "hour_from": 13.0,
+                            "hour_to": 15.0,
+                            "day_period": "afternoon",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Tue AM",
+                            "dayofweek": "1",
+                            "hour_from": 6.0,
+                            "hour_to": 12.0,
+                            "day_period": "morning",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Tue PM",
+                            "dayofweek": "1",
+                            "hour_from": 13.0,
+                            "hour_to": 15.0,
+                            "day_period": "afternoon",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Wed AM",
+                            "dayofweek": "2",
+                            "hour_from": 6.0,
+                            "hour_to": 12.0,
+                            "day_period": "morning",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Wed PM",
+                            "dayofweek": "2",
+                            "hour_from": 13.0,
+                            "hour_to": 15.0,
+                            "day_period": "afternoon",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Thu AM",
+                            "dayofweek": "3",
+                            "hour_from": 6.0,
+                            "hour_to": 12.0,
+                            "day_period": "morning",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Thu PM",
+                            "dayofweek": "3",
+                            "hour_from": 13.0,
+                            "hour_to": 15.0,
+                            "day_period": "afternoon",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Fri AM",
+                            "dayofweek": "4",
+                            "hour_from": 6.0,
+                            "hour_to": 12.0,
+                            "day_period": "morning",
+                        },
+                    ),
+                    (
+                        0,
+                        0,
+                        {
+                            "name": "Fri PM",
+                            "dayofweek": "4",
+                            "hour_from": 13.0,
+                            "hour_to": 15.0,
+                            "day_period": "afternoon",
+                        },
+                    ),
+                ],
+            }
+        )
+        cls.employee = cls.env["hr.employee"].create(
+            {
+                "name": "Test Employee",
+                "resource_calendar_id": calendar.id,
+            }
+        )
+        cls.project = cls.env["project.project"].create({"name": "Test Project"})
+        cls.task = cls.env["project.task"].create(
+            {"name": "Test Task", "project_id": cls.project.id}
+        )
 
         cls.analytic_line_model = cls.env["account.analytic.line"]
         cls.uom_hour = cls.env.ref("uom.product_uom_hour")
         cls.env["ir.config_parameter"].sudo().set_param(
-            "project_timesheet_time_control.timesheet_alignment", "no-gap"
+            "hr_timesheet_time_control.timesheet_alignment", "no-gap"
         )
 
     @freeze_time("2025-04-03")
@@ -86,7 +210,7 @@ class TestAccountAnalyticLine(BaseCommon):
     def test_get_default_start_time_now(self):
         """Test the default start time calculation."""
         self.env["ir.config_parameter"].sudo().set_param(
-            "project_timesheet_time_control.timesheet_alignment", "now"
+            "hr_timesheet_time_control.timesheet_alignment", "now"
         )
         default_start_time = self.analytic_line_model._get_default_start_time()
         self.assertEqual(default_start_time, datetime(2025, 4, 2, 12, 0, 0))
