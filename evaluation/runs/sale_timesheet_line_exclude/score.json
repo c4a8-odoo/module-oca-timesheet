@@ -1,0 +1,89 @@
+{
+  "module": "sale_timesheet_line_exclude",
+  "source_version": "18.0",
+  "target_version": "19.0",
+  "scored_at": "2026-05-31T18:20:41.013451+00:00",
+  "score": 80.0,
+  "band": "Good",
+  "sub_scores": {
+    "manifest_correctness": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 1,
+      "achieved": 1,
+      "notes": ""
+    },
+    "api_orm_updates": {
+      "score": 0.0,
+      "weight": 0.2,
+      "expected": 2,
+      "achieved": 0,
+      "notes": ""
+    },
+    "view_xml_migration": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 0,
+      "achieved": 0,
+      "notes": "No XML migration patterns triggered for this module."
+    },
+    "removed_deprecated": {
+      "score": 1.0,
+      "weight": 0.1,
+      "expected": 0,
+      "achieved": 0,
+      "notes": "Reference did not delete any source files."
+    },
+    "tests_discoverable": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 3,
+      "achieved": 3,
+      "notes": ""
+    },
+    "code_style": {
+      "score": 1.0,
+      "weight": 0.1,
+      "expected": 1,
+      "achieved": 1,
+      "notes": "pyflakes: src=3, ref=3, candidate=3 (\u2264 bar 3)"
+    },
+    "no_spurious_diffs": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 15,
+      "achieved": 15,
+      "notes": ""
+    }
+  },
+  "agent_diff_vs_reference": {
+    "files_changed": [
+      "README.rst",
+      "__manifest__.py",
+      "i18n/es.po",
+      "i18n/sale_timesheet_line_exclude.pot",
+      "security/exclude_from_sale_order.xml",
+      "static/description/index.html",
+      "tests/test_sale_timesheet_line_exclude.py"
+    ],
+    "files_only_in_candidate": [],
+    "files_only_in_reference": [],
+    "diff_path": "diff.patch"
+  },
+  "missing_changes": [
+    {
+      "category": "api_orm_updates",
+      "reason_code": "LEGACY_CR_CONTEXT_NOT_REPLACED",
+      "detail": "1 reference-removed line(s) still in candidate, e.g. ['    \"author\": \"CorporateHub, \" \"Odoo Community Association (OCA)\",']",
+      "file": "__manifest__.py"
+    },
+    {
+      "category": "api_orm_updates",
+      "reason_code": "LEGACY_CR_CONTEXT_NOT_REPLACED",
+      "detail": "51 reference-removed line(s) still in candidate, e.g. ['                \"account_id\": self.analytic_account_sale.id,', '                \"name\": self.product.name,', '                \"order_id\": self.sale_order.id,']",
+      "file": "tests/test_sale_timesheet_line_exclude.py"
+    }
+  ],
+  "extra_changes": [],
+  "improvement_prompt": "# Improvement prompt for `sale_timesheet_line_exclude`\n\nWhen you re-run the migration agent on this module, focus on the\nfollowing gaps the previous run left:\n\n## Weakest rubric categories\n\n- **api_orm_updates** (score `0.00`, weight `0.2`, 0/2 required changes applied)\n- **view_xml_migration** (score `1.00`, weight `0.15`, 0/0 required changes applied)\n\n## Top failure patterns (reason codes)\n\n- `LEGACY_CR_CONTEXT_NOT_REPLACED` \u00d7 2\n\n## Concrete instructions for the next run\n\n- Apply `self._cr` \u2192 `self.env.cr`, `self._context` \u2192 `self.env.context`, drop `@api.multi`/`@api.one`. The rule is marked `auto_apply: false` in the YAML \u2014 promote it to auto-apply for safe cases or stop bailing out.\n"
+}

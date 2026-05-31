@@ -1,0 +1,107 @@
+{
+  "module": "hr_timesheet_time_control_begin_end",
+  "source_version": "18.0",
+  "target_version": "19.0",
+  "scored_at": "2026-05-31T18:20:40.199392+00:00",
+  "score": 72.5,
+  "band": "Acceptable",
+  "sub_scores": {
+    "manifest_correctness": {
+      "score": 0.5,
+      "weight": 0.15,
+      "expected": 2,
+      "achieved": 1,
+      "notes": ""
+    },
+    "api_orm_updates": {
+      "score": 0.0,
+      "weight": 0.2,
+      "expected": 3,
+      "achieved": 0,
+      "notes": ""
+    },
+    "view_xml_migration": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 0,
+      "achieved": 0,
+      "notes": "No XML migration patterns triggered for this module."
+    },
+    "removed_deprecated": {
+      "score": 1.0,
+      "weight": 0.1,
+      "expected": 0,
+      "achieved": 0,
+      "notes": "Reference did not delete any source files."
+    },
+    "tests_discoverable": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 3,
+      "achieved": 3,
+      "notes": ""
+    },
+    "code_style": {
+      "score": 1.0,
+      "weight": 0.1,
+      "expected": 1,
+      "achieved": 1,
+      "notes": "pyflakes: src=3, ref=3, candidate=3 (\u2264 bar 3)"
+    },
+    "no_spurious_diffs": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 7,
+      "achieved": 7,
+      "notes": ""
+    }
+  },
+  "agent_diff_vs_reference": {
+    "files_changed": [
+      "README.rst",
+      "__manifest__.py",
+      "i18n/hr_timesheet_time_control_begin_end.pot",
+      "models/account_analytic_line.py",
+      "static/description/index.html",
+      "tests/test_account_analytic_line.py",
+      "views/account_analytic_line_view.xml",
+      "views/project_task_view.xml"
+    ],
+    "files_only_in_candidate": [],
+    "files_only_in_reference": [
+      "readme/USAGE.md",
+      "static/img/01_timesheet_list_view.png",
+      "static/img/02_timesheet_form_view.png",
+      "static/img/03_task_timesheet_view.png"
+    ],
+    "diff_path": "diff.patch"
+  },
+  "missing_changes": [
+    {
+      "category": "manifest_correctness",
+      "reason_code": "MANIFEST_DEPENDS_DRIFT",
+      "detail": "depends mismatch: candidate=['project_timesheet_time_control'] reference=['hr_timesheet_time_control']",
+      "file": "__manifest__.py"
+    },
+    {
+      "category": "api_orm_updates",
+      "reason_code": "LEGACY_CR_CONTEXT_NOT_REPLACED",
+      "detail": "1 reference-removed line(s) still in candidate, e.g. ['        \"project_timesheet_time_control\",']",
+      "file": "__manifest__.py"
+    },
+    {
+      "category": "api_orm_updates",
+      "reason_code": "LEGACY_CR_CONTEXT_NOT_REPLACED",
+      "detail": "6 reference-removed line(s) still in candidate, e.g. ['                    else pytz.timezone(self.env.user.tz)', '                else pytz.timezone(self.env.user.tz)', '                self.env.context.get(\"default_date_time\")']",
+      "file": "models/account_analytic_line.py"
+    },
+    {
+      "category": "api_orm_updates",
+      "reason_code": "LEGACY_CR_CONTEXT_NOT_REPLACED",
+      "detail": "3 reference-removed line(s) still in candidate, e.g. ['                default_product_uom_id=hour_uom.id', '        cls.project = cls.env.ref(\"project.project_project_1\")', '        self.employee.tz = \"Europe/Brussels\"  # UTC+1/+2']",
+      "file": "tests/test_account_analytic_line.py"
+    }
+  ],
+  "extra_changes": [],
+  "improvement_prompt": "# Improvement prompt for `hr_timesheet_time_control_begin_end`\n\nWhen you re-run the migration agent on this module, focus on the\nfollowing gaps the previous run left:\n\n## Weakest rubric categories\n\n- **api_orm_updates** (score `0.00`, weight `0.2`, 0/3 required changes applied)\n- **manifest_correctness** (score `0.50`, weight `0.15`, 1/2 required changes applied)\n- **view_xml_migration** (score `1.00`, weight `0.15`, 0/0 required changes applied)\n\n## Top failure patterns (reason codes)\n\n- `LEGACY_CR_CONTEXT_NOT_REPLACED` \u00d7 3\n- `MANIFEST_DEPENDS_DRIFT` \u00d7 1\n\n## Concrete instructions for the next run\n\n- Apply `self._cr` \u2192 `self.env.cr`, `self._context` \u2192 `self.env.context`, drop `@api.multi`/`@api.one`. The rule is marked `auto_apply: false` in the YAML \u2014 promote it to auto-apply for safe cases or stop bailing out.\n- Re-evaluate `depends`/`data`/`license`/`external_dependencies` against the target branch; do not blindly preserve the 18.0 manifest.\n"
+}

@@ -1,0 +1,68 @@
+{
+  "module": "crm_timesheet",
+  "source_version": "18.0",
+  "target_version": "19.0",
+  "scored_at": "2026-05-31T18:20:38.543761+00:00",
+  "score": 100.0,
+  "band": "Excellent",
+  "sub_scores": {
+    "manifest_correctness": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 3,
+      "achieved": 3,
+      "notes": ""
+    },
+    "api_orm_updates": {
+      "score": 1.0,
+      "weight": 0.2,
+      "expected": 5,
+      "achieved": 5,
+      "notes": ""
+    },
+    "view_xml_migration": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 0,
+      "achieved": 0,
+      "notes": "No XML migration patterns triggered for this module."
+    },
+    "removed_deprecated": {
+      "score": 1.0,
+      "weight": 0.1,
+      "expected": 1,
+      "achieved": 1,
+      "notes": ""
+    },
+    "tests_discoverable": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 3,
+      "achieved": 3,
+      "notes": ""
+    },
+    "code_style": {
+      "score": 1.0,
+      "weight": 0.1,
+      "expected": 1,
+      "achieved": 1,
+      "notes": "pyflakes: src=6, ref=8, candidate=8 (\u2264 bar 8)"
+    },
+    "no_spurious_diffs": {
+      "score": 1.0,
+      "weight": 0.15,
+      "expected": 16,
+      "achieved": 16,
+      "notes": ""
+    }
+  },
+  "agent_diff_vs_reference": {
+    "files_changed": [],
+    "files_only_in_candidate": [],
+    "files_only_in_reference": [],
+    "diff_path": "diff.patch"
+  },
+  "missing_changes": [],
+  "extra_changes": [],
+  "improvement_prompt": "# Improvement prompt for `crm_timesheet`\n\nWhen you re-run the migration agent on this module, focus on the\nfollowing gaps the previous run left:\n\n## Weakest rubric categories\n\n- **view_xml_migration** (score `1.00`, weight `0.15`, 0/0 required changes applied)\n\n## Top failure patterns (reason codes)\n\n- _(no findings \u2014 nothing to learn from this run)_\n\n## Concrete instructions for the next run\n\n- _(no actionable advice \u2014 nothing to change)_\n"
+}
