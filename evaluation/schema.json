@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MigrationAgentScore",
+  "type": "object",
+  "required": [
+    "module",
+    "source_version",
+    "target_version",
+    "score",
+    "band",
+    "sub_scores",
+    "agent_diff_vs_reference",
+    "missing_changes",
+    "extra_changes",
+    "improvement_prompt"
+  ],
+  "properties": {
+    "module": { "type": "string" },
+    "source_version": { "type": "string", "const": "18.0" },
+    "target_version": { "type": "string", "const": "19.0" },
+    "scored_at": { "type": "string", "format": "date-time" },
+    "score": { "type": "number", "minimum": 0, "maximum": 100 },
+    "band": {
+      "type": "string",
+      "enum": ["Excellent", "Good", "Acceptable", "Poor", "Failed"]
+    },
+    "sub_scores": {
+      "type": "object",
+      "required": [
+        "manifest_correctness",
+        "api_orm_updates",
+        "view_xml_migration",
+        "removed_deprecated",
+        "tests_discoverable",
+        "code_style",
+        "no_spurious_diffs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "manifest_correctness": { "$ref": "#/$defs/subScore" },
+        "api_orm_updates": { "$ref": "#/$defs/subScore" },
+        "view_xml_migration": { "$ref": "#/$defs/subScore" },
+        "removed_deprecated": { "$ref": "#/$defs/subScore" },
+        "tests_discoverable": { "$ref": "#/$defs/subScore" },
+        "code_style": { "$ref": "#/$defs/subScore" },
+        "no_spurious_diffs": { "$ref": "#/$defs/subScore" }
+      }
+    },
+    "agent_diff_vs_reference": {
+      "type": "object",
+      "required": ["files_changed", "files_only_in_candidate", "files_only_in_reference"],
+      "properties": {
+        "files_changed": { "type": "array", "items": { "type": "string" } },
+        "files_only_in_candidate": { "type": "array", "items": { "type": "string" } },
+        "files_only_in_reference": { "type": "array", "items": { "type": "string" } },
+        "diff_path": { "type": "string" }
+      }
+    },
+    "missing_changes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    },
+    "extra_changes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    },
+    "improvement_prompt": { "type": "string" }
+  },
+  "$defs": {
+    "subScore": {
+      "type": "object",
+      "required": ["score", "weight", "expected", "achieved"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "weight": { "type": "number" },
+        "expected": { "type": "integer", "minimum": 0 },
+        "achieved": { "type": "integer", "minimum": 0 },
+        "notes": { "type": "string" }
+      }
+    },
+    "finding": {
+      "type": "object",
+      "required": ["category", "reason_code", "detail"],
+      "properties": {
+        "category": {
+          "enum": [
+            "manifest_correctness",
+            "api_orm_updates",
+            "view_xml_migration",
+            "removed_deprecated",
+            "tests_discoverable",
+            "code_style",
+            "no_spurious_diffs"
+          ]
+        },
+        "reason_code": { "type": "string" },
+        "detail": { "type": "string" },
+        "file": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+crm_timesheet
+hr_timesheet_autofill_project_off
+hr_timesheet_begin_end
+hr_timesheet_day_week
+hr_timesheet_task_required
+hr_timesheet_task_stage
+hr_timesheet_time_control_begin_end
+project_timesheet_holidays_dynamic_description
+sale_timesheet_invoice_link
+sale_timesheet_line_exclude
