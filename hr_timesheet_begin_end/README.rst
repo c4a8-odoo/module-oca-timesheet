@@ -21,7 +21,7 @@ Timesheet - Begin/End Hours
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Ftimesheet-lightgray.png?logo=github
-    :target: https://github.com/OCA/timesheet/tree/18.0/hr_timesheet_begin_end
+    :target: https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_begin_end
     :alt: OCA/timesheet
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/timesheet-18-0/timesheet-18-0-hr_timesheet_begin_end
@@ -35,7 +35,7 @@ Timesheet - Begin/End Hours
 Adds starting and ending hours fields on the timesheet activities.
 
 There is also another module
-`hr_timesheet_time_control <https://github.com/OCA/project/tree/17.0/hr_timesheet_time_control>`__
+`hr_timesheet_time_control <https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_time_control>`__
 with very similar functionality.
 
 **Table of contents**
@@ -94,6 +94,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/timesheet <https://github.com/OCA/timesheet/tree/18.0/hr_timesheet_begin_end>`_ project on GitHub.
+This module is part of the `OCA/timesheet <https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_begin_end>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

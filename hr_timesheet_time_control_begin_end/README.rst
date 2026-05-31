@@ -21,7 +21,7 @@ HR Timesheet Time Control begin/end
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Ftimesheet-lightgray.png?logo=github
-    :target: https://github.com/OCA/timesheet/tree/18.0/hr_timesheet_time_control_begin_end
+    :target: https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_time_control_begin_end
     :alt: OCA/timesheet
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/timesheet-18-0/timesheet-18-0-hr_timesheet_time_control_begin_end
@@ -34,7 +34,7 @@ HR Timesheet Time Control begin/end
 
 This module adds begin and end time to analytic line, similar to
 `hr_timesheet_begin_end <../hr_timesheet_begin_end>`__ but based on
-`hr_timesheet_time_control <https://github.com/OCA/project/tree/18.0/hr_timesheet_time_control>`__.
+`hr_timesheet_time_control <https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_time_control>`__.
 
 **Table of contents**
 
@@ -80,6 +80,6 @@ Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
 
 |maintainer-CRogos| 
 
-This module is part of the `OCA/timesheet <https://github.com/OCA/timesheet/tree/18.0/hr_timesheet_time_control_begin_end>`_ project on GitHub.
+This module is part of the `OCA/timesheet <https://github.com/OCA/timesheet/tree/19.0/hr_timesheet_time_control_begin_end>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
