@@ -23,7 +23,7 @@ class TestProjectTimesheetHolidaysDescription(TransactionCase):
             {
                 "name": "HR Employee",
                 "login": "hr_employee",
-                "groups_id": [
+                "group_ids": [
                     Command.set(
                         [
                             cls.env.ref("hr_timesheet.group_hr_timesheet_user").id,
@@ -37,7 +37,7 @@ class TestProjectTimesheetHolidaysDescription(TransactionCase):
             {
                 "name": "HR Approver",
                 "login": "hr_approver",
-                "groups_id": [
+                "group_ids": [
                     Command.set(
                         [
                             cls.env.ref("hr_holidays.group_hr_holidays_user").id,
@@ -98,7 +98,7 @@ class TestProjectTimesheetHolidaysDescription(TransactionCase):
         return ts
 
     def test_match_timesheet_and_leave_description(self):
-        ts = self._create_leave_with_timesheet()
+        ts = self.env.create_leave_with_timesheet()
 
         self.assertTrue(
             ts.name.startswith(self.leave.name),
@@ -108,7 +108,7 @@ class TestProjectTimesheetHolidaysDescription(TransactionCase):
     def test_no_match_when_config_disabled(self):
         self.leave_type.dynamic_timesheet_description = False
 
-        ts = self._create_leave_with_timesheet()
+        ts = self.env.create_leave_with_timesheet()
 
         self.assertNotIn(
             self.leave.name,

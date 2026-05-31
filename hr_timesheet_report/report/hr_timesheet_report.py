@@ -268,13 +268,10 @@ class HrTimesheetReportAbstractField(models.AbstractModel):
         compute="_compute_groupby",
     )
 
-    _sql_constraints = [
-        (
-            "field_name_uniq",
-            "UNIQUE(report_id, field_name)",
-            "Field can be reported only once!",
-        ),
-    ]
+    _field_name_uniq = models.Constraint(
+        "UNIQUE(report_id, field_name)",
+        "Field can be reported only once!",
+    )
 
     @api.depends("field_name", "aggregation")
     def _compute_groupby(self):
@@ -481,7 +478,7 @@ class Report(models.AbstractModel):
                 self.env._("Report %(num)s", num=report_index + 1)
             )
 
-            formats = self._create_workbook_formats(report, workbook)
+            formats = self.env.create_workbook_formats(report, workbook)
 
             amount_column_index = len(report.entry_field_ids)
 

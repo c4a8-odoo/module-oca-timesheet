@@ -10,11 +10,11 @@ class TestHrTimesheetSheet(HrTimesheetTestCases):
         """sheet_id should compute for attendaces which
         were created before creation of timesheet"""
         checkInDate = datetime.datetime(2018, 11, 12, 10, 0, 0)
-        self._create_attendance(
+        self.env.create_attendance(
             employee=self.employee,
             checkIn=checkInDate,
         )
-        time_sheet = self._create_timesheet_sheet(
+        time_sheet = self.env.create_timesheet_sheet(
             self.employee, datetime.date(2018, 11, 12)
         )
         self.assertEqual(
@@ -31,7 +31,7 @@ class TestHrTimesheetSheet(HrTimesheetTestCases):
         # Attendance - 1
         checkInDate = datetime.datetime(2018, 12, 12, 9, 0, 0)
         checkOutDate = datetime.datetime(2018, 12, 12, 11, 0, 0)
-        self._create_attendance(
+        self.env.create_attendance(
             employee=self.employee,
             checkIn=checkInDate,
             checkOut=checkOutDate,
@@ -58,7 +58,7 @@ class TestHrTimesheetSheet(HrTimesheetTestCases):
         # Attendance - 2
         checkInDate = datetime.datetime(2018, 12, 12, 13, 0, 0)
         checkOutDate = datetime.datetime(2018, 12, 12, 14, 0, 0)
-        self._create_attendance(
+        self.env.create_attendance(
             employee=self.employee,
             checkIn=checkInDate,
             checkOut=checkOutDate,
@@ -107,7 +107,7 @@ class TestHrTimesheetSheet(HrTimesheetTestCases):
 
         # # Attendance - 3
         checkInDate = datetime.datetime(2018, 12, 12, 16, 0, 0)
-        attendance_3 = self._create_attendance(
+        attendance_3 = self.env.create_attendance(
             employee=self.employee,
             checkIn=checkInDate,
         )
@@ -125,7 +125,7 @@ class TestHrTimesheetSheet(HrTimesheetTestCases):
 
     def test_03_sighin_sighout(self):
         """test Check In/Check Out button on timesheet-sheet"""
-        time_sheet = self._create_timesheet_sheet(self.employee)
+        time_sheet = self.env.create_timesheet_sheet(self.employee)
         time_sheet.attendance_action_change()
         self.assertNotEqual(
             time_sheet.attendances_ids.filtered(lambda att: not att.check_out).ids,
@@ -150,13 +150,13 @@ class TestHrTimesheetSheet(HrTimesheetTestCases):
         self.user_id.tz = "Europe/Brussels"
         # Attendance at Jan 14, 23:30 UTC = Jan 15, 00:30 Brussels (UTC+1)
         # So it's Jan 15 in employee's timezone
-        attendance = self._create_attendance(
+        attendance = self.env.create_attendance(
             employee=self.employee,
             checkIn=datetime.datetime(2019, 1, 14, 23, 30, 0),
             checkOut=datetime.datetime(2019, 1, 15, 2, 0, 0),
         )
         # Timesheet for Jan 15-20
-        timesheet = self._create_timesheet_sheet(
+        timesheet = self.env.create_timesheet_sheet(
             self.employee, datetime.date(2019, 1, 15)
         )
         # Should be included (check_in is Jan 15 in Brussels)

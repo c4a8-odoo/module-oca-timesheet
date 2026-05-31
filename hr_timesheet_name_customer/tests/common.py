@@ -60,7 +60,7 @@ class TestCommonNameCustomer(TransactionCase):
                 "name": "User Employee",
                 "login": "user_employee",
                 "email": "useremployee@test.com",
-                "groups_id": [
+                "group_ids": [
                     (6, 0, [cls.env.ref("hr_timesheet.group_hr_timesheet_user").id])
                 ],
             }

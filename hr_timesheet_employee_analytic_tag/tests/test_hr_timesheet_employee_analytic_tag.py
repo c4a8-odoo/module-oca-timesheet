@@ -59,23 +59,23 @@ class TestHrTimesheetEmployeeAnalyticTag(BaseCommon):
         return timesheet.save()
 
     def test_account_analytic_line_create_01(self):
-        item = self._create_account_analytic_line(self.employee_1, False)
+        item = self.env.create_account_analytic_line(self.employee_1, False)
         self.assertIn(self.tag_1, item.tag_ids)
         self.assertNotIn(self.tag_2, item.tag_ids)
-        item = self._create_account_analytic_line(self.employee_2, False)
+        item = self.env.create_account_analytic_line(self.employee_2, False)
         self.assertNotIn(self.tag_1, item.tag_ids)
         self.assertNotIn(self.tag_2, item.tag_ids)
 
     def test_account_analytic_line_create_02(self):
-        item = self._create_account_analytic_line(self.employee_1, self.tag_2)
+        item = self.env.create_account_analytic_line(self.employee_1, self.tag_2)
         self.assertIn(self.tag_1, item.tag_ids)
         self.assertIn(self.tag_2, item.tag_ids)
-        item = self._create_account_analytic_line(self.employee_2, self.tag_2)
+        item = self.env.create_account_analytic_line(self.employee_2, self.tag_2)
         self.assertNotIn(self.tag_1, item.tag_ids)
         self.assertIn(self.tag_2, item.tag_ids)
 
     @users("test-user")
     def test_account_analytic_line_create_03(self):
-        item = self._create_timesheet_item().sudo()
+        item = self.env.create_timesheet_item().sudo()
         self.assertIn(self.tag_1, item.tag_ids)
         self.assertNotIn(self.tag_2, item.tag_ids)

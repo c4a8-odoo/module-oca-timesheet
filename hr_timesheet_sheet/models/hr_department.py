@@ -13,13 +13,13 @@ class HrDepartment(models.Model):
     )
 
     def _compute_timesheet_to_approve(self):
-        timesheet_data = self.env["hr_timesheet.sheet"].read_group(
-            [("department_id", "in", self.ids), ("state", "=", "confirm")],
-            ["department_id"],
-            ["department_id"],
+        timesheet_data = self.env["hr_timesheet.sheet"].formatted_read_group(
+            domain=[("department_id", "in", self.ids), ("state", "=", "confirm")],
+            groupby=["department_id"],
+            aggregates=["__count"],
         )
         result = {
-            data["department_id"][0]: data["department_id_count"]
+            data["department_id"][0]: data["__count"]
             for data in timesheet_data
         }
         for department in self:

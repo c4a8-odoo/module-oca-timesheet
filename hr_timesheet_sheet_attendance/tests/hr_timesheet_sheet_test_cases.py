@@ -24,7 +24,7 @@ class HrTimesheetTestCases(TransactionCase):
             "login": "test",
             "password": "test",
             "company_id": cls.env.ref("base.main_company").id,
-            "groups_id": [
+            "group_ids": [
                 (
                     6,
                     0,

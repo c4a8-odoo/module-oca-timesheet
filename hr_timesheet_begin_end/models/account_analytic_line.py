@@ -4,7 +4,7 @@
 
 from datetime import timedelta
 
-from odoo import _, api, exceptions, fields, models
+from odoo import api, exceptions, fields, models
 from odoo.tools.float_utils import float_compare
 
 
@@ -26,7 +26,7 @@ class AccountAnalyticLine(models.Model):
                 value_to_html(line.time_stop, None)
 
                 raise exceptions.ValidationError(
-                    _(
+                    line.env._(
                         "The beginning hour (%(html_start)s) must "
                         "precede the ending hour (%(html_stop)s)."
                     )
@@ -41,7 +41,7 @@ class AccountAnalyticLine(models.Model):
                 hours, line.unit_amount, precision_rounding=rounding
             ):
                 raise exceptions.ValidationError(
-                    _(
+                    line.env._(
                         "The duration (%(html_unit_amount)s) must be equal to "
                         "the difference between the hours (%(html_hours)s)."
                     )
@@ -61,7 +61,7 @@ class AccountAnalyticLine(models.Model):
                 ]
             )
             if others:
-                message = _("Lines can't overlap:\n")
+                message = line.env._("Lines can't overlap:\n")
                 message += "\n".join(
                     [
                         f"{value_to_html(other.time_start, None)} - "

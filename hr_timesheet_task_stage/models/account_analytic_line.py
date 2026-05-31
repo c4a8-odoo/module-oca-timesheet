@@ -5,7 +5,7 @@
 # Copyright 2020 Tecnativa - Manuel Calero
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import _, fields, models
+from odoo import fields, models
 from odoo.exceptions import UserError
 
 
@@ -25,7 +25,7 @@ class AccountAnalyticLine(models.Model):
             )
             if not stage:  # pragma: no cover
                 raise UserError(
-                    _(
+                    line.env._(
                         'There isn\'t any stage with "Closed" unchecked.'
                         " Please unmark any."
                     )
@@ -40,7 +40,7 @@ class AccountAnalyticLine(models.Model):
             )
             if not stage:  # pragma: no cover
                 raise UserError(
-                    _(
+                    line.env._(
                         'There isn\'t any stage with "Closed" checked. Please'
                         " mark any."
                     )

@@ -510,7 +510,8 @@ class Sheet(models.Model):
                     rec.delete_empty_lines(True)
         return res
 
-    def unlink(self):
+    @api.ondelete(at_uninstall=False)
+    def _unlink_except_submitted_or_confirmed(self):
         for sheet in self:
             if sheet.state in ("confirm", "done"):
                 raise UserError(
@@ -520,7 +521,6 @@ class Sheet(models.Model):
                         sheet.complete_name,
                     )
                 )
-        return super().unlink()
 
     def onchange(self, values, field_name, field_onchange):
         """

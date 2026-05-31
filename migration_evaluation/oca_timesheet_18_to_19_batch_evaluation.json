@@ -1,0 +1,1292 @@
+{
+  "branch": "copilot/validate-plugin-performance",
+  "generated_at": "2026-05-31T20:40:29.441730+00:00",
+  "modules": [
+    {
+      "files_changed": [
+        "crm_timesheet/__manifest__.py",
+        "crm_timesheet/tests/test_account_analytic_line.py"
+      ],
+      "improvement_prompt": "Migrate crm_timesheet from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "crm_timesheet",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.1.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_employee_cost_history/__manifest__.py",
+        "hr_employee_cost_history/tests/test_hr_timesheet.py"
+      ],
+      "improvement_prompt": "Migrate hr_employee_cost_history from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": {
+          "python": [
+            "freezegun"
+          ]
+        },
+        "license": "LGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_employee_cost_history",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_autofill_project_off/__manifest__.py",
+        "hr_timesheet_autofill_project_off/models/hr_timesheet.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_autofill_project_off from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_autofill_project_off",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_begin_end/README.rst",
+        "hr_timesheet_begin_end/__manifest__.py",
+        "hr_timesheet_begin_end/models/account_analytic_line.py",
+        "hr_timesheet_begin_end/readme/DESCRIPTION.md",
+        "hr_timesheet_begin_end/static/description/index.html"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_begin_end from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_begin_end",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_calendar/README.rst",
+        "hr_timesheet_calendar/__manifest__.py",
+        "hr_timesheet_calendar/models/account_analytic_line.py",
+        "hr_timesheet_calendar/models/res_config_settings.py",
+        "hr_timesheet_calendar/readme/DESCRIPTION.md",
+        "hr_timesheet_calendar/static/description/index.html",
+        "hr_timesheet_calendar/tests/test_account_analytic_line.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_calendar from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available. Review remaining pytz/env.tz or unlink side-effect findings and only change them when semantics are certain.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_calendar",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)",
+        "timezone_env_tz_review in hr_timesheet_calendar/models/account_analytic_line.py (1)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 89,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "manual_review_items"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_date_order_desc/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_date_order_desc from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_date_order_desc",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_day_week/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_day_week from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_day_week",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_editable_top/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_editable_top from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_editable_top",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_employee_analytic_tag/__manifest__.py",
+        "hr_timesheet_employee_analytic_tag/tests/test_hr_timesheet_employee_analytic_tag.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_employee_analytic_tag from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_employee_analytic_tag",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_name_customer/__manifest__.py",
+        "hr_timesheet_name_customer/tests/common.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_name_customer from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "LGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_name_customer",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_portal/__manifest__.py",
+        "hr_timesheet_portal/views/hr_employee.xml"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_portal from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_portal",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_report/__manifest__.py",
+        "hr_timesheet_report/report/hr_timesheet_report.py",
+        "hr_timesheet_report/tests/test_hr_timesheet_report.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_report from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available. Resolve deprecated read_group calls by choosing formatted_read_group or _read_group and adapting return-shape handling.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_manual_review_items",
+      "module": "hr_timesheet_report",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)",
+        "read_group_api_review in hr_timesheet_report/report/hr_timesheet_report.py (2)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected",
+        "python.read_group.deprecated: escalated for complex return-shape review"
+      ],
+      "score": 84,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "manual_review_items"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_sheet/__manifest__.py",
+        "hr_timesheet_sheet/models/account_analytic_line.py",
+        "hr_timesheet_sheet/models/hr_department.py",
+        "hr_timesheet_sheet/models/hr_timesheet_sheet.py",
+        "hr_timesheet_sheet/views/hr_timesheet_sheet_views.xml"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_sheet from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_sheet",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_sheet_attendance/__manifest__.py",
+        "hr_timesheet_sheet_attendance/models/hr_attendance.py",
+        "hr_timesheet_sheet_attendance/models/hr_timesheet_sheet.py",
+        "hr_timesheet_sheet_attendance/tests/hr_timesheet_sheet_test_cases.py",
+        "hr_timesheet_sheet_attendance/tests/test_hr_attendance.py",
+        "hr_timesheet_sheet_attendance/tests/test_hr_timesheet_sheet.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_sheet_attendance from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available. Review remaining pytz/env.tz or unlink side-effect findings and only change them when semantics are certain.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_sheet_attendance",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)",
+        "timezone_env_tz_review in hr_timesheet_sheet_attendance/models/hr_timesheet_sheet.py (1)",
+        "timezone_env_tz_review in hr_timesheet_sheet_attendance/models/hr_attendance.py (1)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 86,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "manual_review_items"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_sheet_autodraft/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_sheet_autodraft from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_sheet_autodraft",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_sheet_policy_project_manager/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_sheet_policy_project_manager from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_sheet_policy_project_manager",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_sheet_warning/__manifest__.py",
+        "hr_timesheet_sheet_warning/models/hr_timesheet_sheet_warning_definition.py",
+        "hr_timesheet_sheet_warning/models/hr_timesheet_sheet_warning_item.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_sheet_warning from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_sheet_warning",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_task_domain/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_task_domain from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_task_domain",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_task_required/__manifest__.py",
+        "hr_timesheet_task_required/models/project_project.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_task_required from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_task_required",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_task_stage/__manifest__.py",
+        "hr_timesheet_task_stage/models/account_analytic_line.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_task_stage from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_task_stage",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_time_control_begin_end/README.rst",
+        "hr_timesheet_time_control_begin_end/__manifest__.py",
+        "hr_timesheet_time_control_begin_end/readme/DESCRIPTION.md",
+        "hr_timesheet_time_control_begin_end/static/description/index.html",
+        "hr_timesheet_time_control_begin_end/views/account_analytic_line_view.xml",
+        "hr_timesheet_time_control_begin_end/views/project_task_view.xml"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_time_control_begin_end from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available. Review remaining pytz/env.tz or unlink side-effect findings and only change them when semantics are certain.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_time_control_begin_end",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)",
+        "timezone_env_tz_review in hr_timesheet_time_control_begin_end/tests/test_account_analytic_line.py (4)",
+        "group_expand_false_positive in hr_timesheet_time_control_begin_end/tests/test_account_analytic_line.py (1)",
+        "timezone_env_tz_review in hr_timesheet_time_control_begin_end/models/account_analytic_line.py (8)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 86,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.2",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "manual_review_items"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_time_type/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_time_type from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_time_type",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_type_non_billable/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_type_non_billable from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_type_non_billable",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "hr_timesheet_unusual_days/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate hr_timesheet_unusual_days from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "hr_timesheet_unusual_days",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "project_task_analytic_propagation/__manifest__.py",
+        "project_task_analytic_propagation/migrations/18.0.3.0.0/post-migration.py",
+        "project_task_analytic_propagation/migrations/18.0.3.0.0/pre-migration.py"
+      ],
+      "improvement_prompt": "Migrate project_task_analytic_propagation from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "LGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "project_task_analytic_propagation",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected",
+        "cleanup.legacy.migrations"
+      ],
+      "score": 94,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "project_timesheet_holidays_dynamic_description/__manifest__.py",
+        "project_timesheet_holidays_dynamic_description/tests/test_project_timesheet_holidays_description.py"
+      ],
+      "improvement_prompt": "Migrate project_timesheet_holidays_dynamic_description from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "project_timesheet_holidays_dynamic_description",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "project_timesheet_holidays_editable/__manifest__.py",
+        "project_timesheet_holidays_editable/tests/test_project_timesheet_holidays_edit_ts.py"
+      ],
+      "improvement_prompt": "Migrate project_timesheet_holidays_editable from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "project_timesheet_holidays_editable",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "sale_timesheet_budget/__manifest__.py",
+        "sale_timesheet_budget/models/project_project.py"
+      ],
+      "improvement_prompt": "Migrate sale_timesheet_budget from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "sale_timesheet_budget",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "sale_timesheet_invoice_link/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate sale_timesheet_invoice_link from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "LGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "sale_timesheet_invoice_link",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.0.1.1",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "sale_timesheet_line_exclude/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate sale_timesheet_line_exclude from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "sale_timesheet_line_exclude",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    },
+    {
+      "files_changed": [
+        "sale_timesheet_rounded/__manifest__.py",
+        "sale_timesheet_rounded/models/account_analytic_line.py",
+        "sale_timesheet_rounded/models/project_project.py"
+      ],
+      "improvement_prompt": "Migrate sale_timesheet_rounded from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available. Review remaining pytz/env.tz or unlink side-effect findings and only change them when semantics are certain.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "sale_timesheet_rounded",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)",
+        "unlink_side_effect_review in sale_timesheet_rounded/models/account_move.py (1)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 89,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "manual_review_items"
+      }
+    },
+    {
+      "files_changed": [
+        "sale_timesheet_timeline/__manifest__.py"
+      ],
+      "improvement_prompt": "Migrate sale_timesheet_timeline from Odoo 18.0 to 19.0 using the c4a8 Odoo migration rules. Compare the manifest with origin/19.0 when present and preserve target-branch metadata. Run manifest parsing, Python compilation, pre-commit, and the OCA test workflow when available.",
+      "manifest_review": {
+        "data": "reviewed; no missing local data files introduced",
+        "depends": "reviewed and updated where target branch or 19.0 rename required",
+        "external_dependencies": null,
+        "license": "AGPL-3"
+      },
+      "migration_outcome": "migrated_with_static_validation",
+      "module": "sale_timesheet_timeline",
+      "observed_failures": [
+        "pre_commit unavailable in environment (baseline blocker)"
+      ],
+      "rule_hits": [
+        "manifest.version.bump",
+        "manifest.target_branch.audit",
+        "python.env.cursor/context/uid safe replacements where detected",
+        "python.groups_id.group_ids where detected",
+        "time-control dependency rename to hr_timesheet_time_control where detected"
+      ],
+      "score": 92,
+      "validation_outcome": {
+        "manifest_parse": "passed",
+        "manifest_version": "19.0.1.0.0",
+        "odoo_tests": "not_run: local OCA test workflow script/environment not available in repository checkout",
+        "pre_commit": "blocked: No module named pre_commit",
+        "python_compile": "passed",
+        "residual_rule_scan": "passed"
+      }
+    }
+  ],
+  "ranking": [
+    {
+      "module": "project_task_analytic_propagation",
+      "outcome": "migrated_with_static_validation",
+      "score": 94
+    },
+    {
+      "module": "crm_timesheet",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_employee_cost_history",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_autofill_project_off",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_begin_end",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_date_order_desc",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_day_week",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_editable_top",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_employee_analytic_tag",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_name_customer",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_portal",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_sheet",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_sheet_autodraft",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_sheet_policy_project_manager",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_sheet_warning",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_task_domain",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_task_required",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_task_stage",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_time_type",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_type_non_billable",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_unusual_days",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "project_timesheet_holidays_dynamic_description",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "project_timesheet_holidays_editable",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "sale_timesheet_budget",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "sale_timesheet_invoice_link",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "sale_timesheet_line_exclude",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "sale_timesheet_timeline",
+      "outcome": "migrated_with_static_validation",
+      "score": 92
+    },
+    {
+      "module": "hr_timesheet_calendar",
+      "outcome": "migrated_with_static_validation",
+      "score": 89
+    },
+    {
+      "module": "sale_timesheet_rounded",
+      "outcome": "migrated_with_static_validation",
+      "score": 89
+    },
+    {
+      "module": "hr_timesheet_sheet_attendance",
+      "outcome": "migrated_with_static_validation",
+      "score": 86
+    },
+    {
+      "module": "hr_timesheet_time_control_begin_end",
+      "outcome": "migrated_with_static_validation",
+      "score": 86
+    },
+    {
+      "module": "hr_timesheet_report",
+      "outcome": "migrated_with_manual_review_items",
+      "score": 84
+    }
+  ],
+  "repository": "c4a8-odoo/module-oca-timesheet",
+  "source_version": "18.0",
+  "summary": {
+    "average_score": 91.25,
+    "highest_score": 94,
+    "lowest_score": 84,
+    "module_count": 32,
+    "pre_commit_status": "blocked: No module named pre_commit",
+    "static_validation": "manifest parsing and Python compilation passed for all modules"
+  },
+  "target_version": "19.0"
+}

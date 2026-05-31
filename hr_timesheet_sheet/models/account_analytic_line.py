@@ -75,9 +75,9 @@ class AccountAnalyticLine(models.Model):
             self._compute_sheet()
         return res
 
-    def unlink(self):
+    @api.ondelete(at_uninstall=False)
+    def _unlink_except_non_draft_sheet(self):
         self._check_state()
-        return super().unlink()
 
     def _check_state_on_write(self, values):
         """Hook for extensions"""

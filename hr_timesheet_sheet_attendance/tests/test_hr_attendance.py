@@ -51,7 +51,7 @@ class TestHrAttendance(HrTimesheetTestCases):
         # create attendance in confirmed timesheet
         with self.assertRaises(UserError):
             checkInDate = datetime.datetime(2018, 12, 12, 13, 35, 0)
-            self._create_attendance(
+            self.env.create_attendance(
                 employee=self.employee,
                 checkIn=checkInDate,
             )

@@ -17,12 +17,12 @@ class ProjectProject(models.Model):
 
     @api.depends("budget_ids")
     def _compute_budget_amount(self):
-        data = self.env["project.project.budget"].read_group(
+        data = self.env["project.project.budget"].formatted_read_group(
             domain=[("project_id", "in", self.ids)],
-            fields=["project_id", "amount:sum"],
             groupby=["project_id"],
+            aggregates=["amount:sum"],
         )
-        mapped_data = {x["project_id"][0]: x["amount"] for x in data}
+        mapped_data = {x["project_id"][0]: x["amount:sum"] for x in data}
         for item in self:
             item.budget_amount = mapped_data.get(item.id, 0)
 

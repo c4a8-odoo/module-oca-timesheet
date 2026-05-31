@@ -46,7 +46,7 @@ class TestHrTimesheetReport(TestHrTimesheetReportBase):
         self.assertTrue(wizard.grouping_field_ids)
         self.assertTrue(wizard.entry_field_ids)
         wizard.action_export_html()
-        report = self._create_report_from_wizard(wizard)
+        report = self.env.create_report_from_wizard(wizard)
         self.IrActionReport._render_qweb_html("hr_timesheet_report.report", report.ids)
 
     @mute_logger("odoo.models.unlink")
@@ -57,7 +57,7 @@ class TestHrTimesheetReport(TestHrTimesheetReportBase):
         self.assertTrue(wizard.grouping_field_ids)
         self.assertTrue(wizard.entry_field_ids)
         wizard.action_export_pdf()
-        report = self._create_report_from_wizard(wizard)
+        report = self.env.create_report_from_wizard(wizard)
         self.IrActionReport._render_qweb_html("hr_timesheet_report.report", report.ids)
 
     @mute_logger("odoo.models.unlink")
@@ -67,7 +67,7 @@ class TestHrTimesheetReport(TestHrTimesheetReportBase):
         wizard = wizard_form.save()
         self.assertTrue(wizard.grouping_field_ids)
         self.assertTrue(wizard.entry_field_ids)
-        report = self._create_report_from_wizard(wizard)
+        report = self.env.create_report_from_wizard(wizard)
         self.IrActionReport._render_xlsx("hr_timesheet_report.report", report.ids, None)
 
     @mute_logger("odoo.models.unlink")
@@ -81,7 +81,7 @@ class TestHrTimesheetReport(TestHrTimesheetReportBase):
         wizard = wizard_form.save()
         self.assertFalse(wizard.grouping_field_ids)
         self.assertTrue(wizard.entry_field_ids)
-        report = self._create_report_from_wizard(wizard)
+        report = self.env.create_report_from_wizard(wizard)
         self.assertEqual(len(report.group_ids), 1)
         self.assertEqual(report.total_unit_amount, 1)
 
@@ -109,7 +109,7 @@ class TestHrTimesheetReportMultiProject(TestHrTimesheetReportBase):
         wizard = wizard_form.save()
         self.assertTrue(wizard.grouping_field_ids)
         self.assertTrue(wizard.entry_field_ids)
-        report = self._create_report_from_wizard(wizard)
+        report = self.env.create_report_from_wizard(wizard)
         self.assertEqual(len(report.group_ids), 2)
         self.assertEqual(len(report.line_ids), 2)
         self.assertIn(self.timesheet_1, report.line_ids)
@@ -125,7 +125,7 @@ class TestHrTimesheetReportMultiProject(TestHrTimesheetReportBase):
         wizard = wizard_form.save()
         self.assertTrue(wizard.grouping_field_ids)
         self.assertTrue(wizard.entry_field_ids)
-        report = self._create_report_from_wizard(wizard)
+        report = self.env.create_report_from_wizard(wizard)
         self.assertEqual(len(report.group_ids), 2)
         self.assertEqual(report.total_unit_amount, 3)
 
@@ -181,7 +181,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_supported_report_types_and_time_format_selection(self):
-        report = self._create_min_report()
+        report = self.env.create_min_report()
         self.assertIn("qweb-html", report._supported_report_types())
         self.assertIn("xlsx", report._supported_report_types())
         selection = report._selection_time_format()
@@ -189,18 +189,18 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_get_domain_line_ids_priority(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         self.assertEqual(report._get_domain(), [("id", "in", [self.timesheet_1.id])])
 
     @mute_logger("odoo.models.unlink")
     def test_get_action_unsupported_type_raises(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         with self.assertRaises(UserError):
             report.get_action("nope")
 
     @mute_logger("odoo.models.unlink")
     def test_get_action_report_not_found_raises(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         IrActionsReportModel = type(self.env["ir.actions.report"])
 
         def _fake_search(self, domain, limit=None, **kwargs):
@@ -213,7 +213,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_get_group_values_not_set_and_separator(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         self.GroupByField.create(
             {
                 "report_id": report.id,
@@ -245,7 +245,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_field_groupby_compute_with_and_without_aggregation(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         f1 = self.EntryField.create(
             {
                 "report_id": report.id,
@@ -270,7 +270,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_field_name_unique_sql_constraint(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         self.EntryField.create(
             {
                 "report_id": report.id,
@@ -294,7 +294,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_entry_field_cell_classes(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         char_f = self.EntryField.create(
             {
                 "report_id": report.id,
@@ -318,7 +318,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_group_get_entry_values_domain_vs_id(self):
-        report = self._create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
+        report = self.env.create_min_report(line_ids=[(6, 0, [self.timesheet_1.id])])
         group = self.Group.create(
             {
                 "report_id": report.id,
@@ -334,7 +334,7 @@ class TestHrTimesheetReportExtraCoverage(TestHrTimesheetReportBase):
 
     @mute_logger("odoo.models.unlink")
     def test_xlsx_amount_num_format_and_convert(self):
-        report = self._create_min_report(time_format="decimal")
+        report = self.env.create_min_report(time_format="decimal")
         self.assertEqual(self.ReportXlsx._get_amount_num_format(report), "0.00")
         self.assertEqual(self.ReportXlsx._convert_amount_num_format(report, 2.5), 2.5)
         report.time_format = "hh_mm"

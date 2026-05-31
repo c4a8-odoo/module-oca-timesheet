@@ -41,7 +41,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
             {
                 "name": "HR Employee",
                 "login": "hr_employee",
-                "groups_id": [
+                "group_ids": [
                     Command.set(
                         [
                             cls.env.ref("hr_timesheet.group_hr_timesheet_user").id,
@@ -55,7 +55,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
             {
                 "name": "HR Approver",
                 "login": "hr_approver",
-                "groups_id": [
+                "group_ids": [
                     Command.set(
                         [
                             cls.env.ref("hr_holidays.group_hr_holidays_user").id,
@@ -125,7 +125,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
         return ts
 
     def test_edit_timesheet_allowed_edit_level_all(self):
-        ts = self._create_leave_with_timesheet("all")
+        ts = self.env.create_leave_with_timesheet("all")
 
         ts.with_user(self.user_employee).write(
             {
@@ -135,7 +135,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
         )
 
     def test_edit_timesheet_not_allowed_edit_level_all(self):
-        ts = self._create_leave_with_timesheet("all")
+        ts = self.env.create_leave_with_timesheet("all")
 
         with self.assertRaises(UserError):
             ts.with_user(self.user_employee).write(
@@ -145,7 +145,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
             )
 
     def test_edit_timesheet_not_allowed_edit_level_none(self):
-        ts = self._create_leave_with_timesheet("none")
+        ts = self.env.create_leave_with_timesheet("none")
 
         with self.assertRaises(UserError):
             ts.with_user(self.user_employee).write(
@@ -155,7 +155,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
             )
 
     def test_edit_timesheet_by_employee_without_group_edit_level_approver(self):
-        ts = self._create_leave_with_timesheet("approver")
+        ts = self.env.create_leave_with_timesheet("approver")
 
         with self.assertRaises(UserError):
             ts.with_user(self.user_employee).write(
@@ -165,7 +165,7 @@ class TestProjectTimesheetHolidays(TransactionCase):
             )
 
     def test_edit_timesheet_by_user_approver_without_group_edit_level_approver(self):
-        ts = self._create_leave_with_timesheet("approver")
+        ts = self.env.create_leave_with_timesheet("approver")
 
         ts.with_user(self.user_approver).write(
             {
