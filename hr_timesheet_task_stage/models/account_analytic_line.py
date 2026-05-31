@@ -25,7 +25,7 @@ class AccountAnalyticLine(models.Model):
             )
             if not stage:  # pragma: no cover
                 raise UserError(
-                    line.env._(
+                    self.env._(
                         'There isn\'t any stage with "Closed" unchecked.'
                         " Please unmark any."
                     )
@@ -40,7 +40,7 @@ class AccountAnalyticLine(models.Model):
             )
             if not stage:  # pragma: no cover
                 raise UserError(
-                    line.env._(
+                    self.env._(
                         'There isn\'t any stage with "Closed" checked. Please'
                         " mark any."
                     )

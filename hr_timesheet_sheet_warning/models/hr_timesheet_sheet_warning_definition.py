@@ -54,6 +54,6 @@ class SheetWarning(models.Model):
         except Exception as error:
             raise UserError(
                 self.env._("Error evaluating %(name)s.\n %(error)s")
-                % ({"name": self._name, "error": error})
+                % ({"name": self.name, "error": error})
             ) from error
         return res

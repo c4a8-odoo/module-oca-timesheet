@@ -121,7 +121,7 @@ class AccountAnalyticLine(models.Model):
         for line in self.exists().filtered("sheet_id"):
             if line.sheet_id.state not in ["new", "draft"]:
                 raise UserError(
-                    line.env._(
+                    self.env._(
                         "You cannot modify an entry in a confirmed timesheet sheet"
                         ": %(names)s",
                         names=line.sheet_id.complete_name,
