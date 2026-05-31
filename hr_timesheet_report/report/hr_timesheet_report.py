@@ -478,7 +478,7 @@ class Report(models.AbstractModel):
                 self.env._("Report %(num)s", num=report_index + 1)
             )
 
-            formats = self.env.create_workbook_formats(report, workbook)
+            formats = self.create_workbook_formats(report, workbook)
 
             amount_column_index = len(report.entry_field_ids)
 

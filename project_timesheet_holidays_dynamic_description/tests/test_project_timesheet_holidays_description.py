@@ -98,7 +98,7 @@ class TestProjectTimesheetHolidaysDescription(TransactionCase):
         return ts
 
     def test_match_timesheet_and_leave_description(self):
-        ts = self.env.create_leave_with_timesheet()
+        ts = self.create_leave_with_timesheet()
 
         self.assertTrue(
             ts.name.startswith(self.leave.name),
@@ -108,7 +108,7 @@ class TestProjectTimesheetHolidaysDescription(TransactionCase):
     def test_no_match_when_config_disabled(self):
         self.leave_type.dynamic_timesheet_description = False
 
-        ts = self.env.create_leave_with_timesheet()
+        ts = self.create_leave_with_timesheet()
 
         self.assertNotIn(
             self.leave.name,

@@ -40,7 +40,7 @@ class AccountAnalyticLineCase(
     def test_aal_time_control_flow(self):
         """Test account.analytic.line time controls."""
         resume_action = self.line.button_resume_work()
-        wizard = self.env.create_wizard(resume_action, self.line)
+        wizard = self.create_wizard(resume_action, self.line)
         self.assertEqual(wizard.analytic_line_id, self.line)
         self.assertEqual(wizard.project_id, self.line.project_id)
         # Stop old timer, start new one
@@ -60,7 +60,7 @@ class AccountAnalyticLineCase(
         # All lines stopped, start new one
         self.assertEqual(self.lead.show_time_control, "start")
         start_action = self.lead.button_start_work()
-        wizard = self.env.create_wizard(start_action, self.lead)
+        wizard = self.create_wizard(start_action, self.lead)
         self.assertLessEqual(wizard.date_time, fields.Datetime.now())
         self.assertEqual(
             wizard.analytic_line_id.account_id, self.lead.project_id.account_id
