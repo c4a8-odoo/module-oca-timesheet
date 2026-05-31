@@ -36,6 +36,5 @@ class ProjectProject(models.Model):
     _check_timesheet_rounding_factor = models.Constraint(
         "CHECK(0 <= timesheet_rounding_factor "
         "AND timesheet_rounding_factor <= 500)",
-        "Timesheet rounding factor should stay between 0 and 500,"
-        " endpoints included.",
+        "Timesheet rounding factor should stay between 0 and 500, endpoints included.",
     )

@@ -53,7 +53,10 @@ class SheetWarning(models.Model):
             res = safe_eval(self.python_code, globals_dict={"sheet": sheet})
         except Exception as error:
             raise UserError(
-                self.env._("Error evaluating %(name)s.\n %(error)s")
-                % ({"name": self.name, "error": error})
+                self.env._(
+                    "Error evaluating %(name)s.\n %(error)s",
+                    name=self.display_name,
+                    error=error,
+                )
             ) from error
         return res
