@@ -38,7 +38,9 @@ jobs:
           done
   test:
     runs-on: ubuntu-22.04
-    container: ${{ matrix.container }}
+    # oca-ci images are rebuilt nightly from the latest Odoo/OCB sources and only
+    # published as :latest; pinning a digest would freeze the tested Odoo code.
+    container: ${{ matrix.container }} # zizmor: ignore[unpinned-images]
     name: ${{ matrix.name }}
     strategy:
       fail-fast: false
